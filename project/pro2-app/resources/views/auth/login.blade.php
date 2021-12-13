@@ -4,8 +4,11 @@
     <div class="flex justify-center w-screen">
         <div class="flex flex-col w-3/12 gap-4">
             <div class="bg-white p-6 rounded-lg">
-            Login
-            </div>
+            @if (session('status'))
+                <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+            {{ session('status') }}
+            @endif
+
             <form action="{{ route('login') }}" method="post" class="bg-white rounded-lg p-6">
             @csrf
             <div class="m-4">

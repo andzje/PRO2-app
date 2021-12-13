@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -12,11 +13,6 @@ class Post extends Model
     protected $fillable = [
         'body'
     ];
-
-    public function ownedBy(User $user)
-    {
-        return $user->id === $this->user>id;
-    }
 
     public function user()
     {

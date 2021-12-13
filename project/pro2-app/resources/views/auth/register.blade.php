@@ -40,13 +40,7 @@
             </div>
             <div class="m-4">
                 <label for="password_confirmation" class="sr-only">Repeat password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat password" class="bg-gray-100 w-full border-2 rounded-lg @error('password') bg-red-100 @enderror">
-
-                @error('password')
-                    <div class="text-xs text-red-800 p-1">
-                        {{ $message }}
-                    </div>
-                @enderror
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat password" class="bg-gray-100 w-full border-2 rounded-lg">
             </div>
 
             <div>

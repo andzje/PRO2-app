@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\logoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,16 @@ use App\Http\Controllers\loginController;
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'store']);
+
+Route::post('/logout', [logoutController::class, 'store'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
