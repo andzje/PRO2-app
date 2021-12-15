@@ -15,6 +15,8 @@ class ApiController extends Controller
     public function createUser(Request $request) {
         $User = new User;
         $User->name = $request->name;
+        $User->email = $request->email;
+        $User->password = $request->password;
         // $User->note = $request->note;
         $User->save();
 
@@ -36,6 +38,8 @@ class ApiController extends Controller
         if (User::where('id', $id)->exists()) {
             $User = User::find($id);
             $User->name = is_null($request->name) ? $User->name : $request->name;
+            $User->email = $request->email;
+            $User->password = $request->password;
             // $User->note = is_null($request->note) ? $User->note : $request->note;
             $User->save();
 
