@@ -13,7 +13,7 @@
             @csrf
             <div class="m-4">
                 <label for="email" class="sr-only">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" class="p-4 border-1 rounded-lg @error('email') bg-red-100 @enderror">
+                <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" class="p-4 border-2 rounded-lg @error('email') bg-red-100 @enderror">
 
                 @error('email')
                     <div class="text-xs text-red-800 p-1">
@@ -23,7 +23,7 @@
             </div>
             <div class="m-4">
                 <label for="password" class="sr-only">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" class="p-4 border-1 rounded-lg @error('password') bg-red-100 @enderror">
+                <input type="password" name="password" id="password" placeholder="Password" class="p-4 border-2 rounded-lg @error('password') bg-red-100 @enderror">
 
                 @error('password')
                     <div class="text-xs text-red-800 p-1">
