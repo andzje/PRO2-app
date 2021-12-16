@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="/css/app.css" rel="stylesheet">
         <title>SuperBlog</title>
     </head>
-    <body class="bg-gray-200">
-        <nav class="p-6 bg-white flex justify-between mb-6">
+    <body class="text-white bg-gray-600">
+        <nav class="p-6 bg-gray-900 flex justify-between mb-6">
             <ul class="flex items-center">
                 <li>
                     <a href="{{ route('home') }}" class="p-3">Home</a>
