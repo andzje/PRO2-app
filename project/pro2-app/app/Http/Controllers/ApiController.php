@@ -82,9 +82,9 @@ class ApiController extends Controller
         ], 201);
     }
     public function getPost($id) {
-        if (User::where('id', $id)->exists()) {
-            $User = User::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($User, 200);
+        if (Post::where('id', $id)->exists()) {
+            $Post = Post::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($Post, 200);
         } else {
             return response()->json([
                 "message" => "User not found"
@@ -92,11 +92,11 @@ class ApiController extends Controller
         }
     }
     public function updatePost(Request $request, $id) {
-        if (User::where('id', $id)->exists()) {
-            $User = User::find($id);
-            $User->name = is_null($request->name) ? $User->name : $request->name;
+        if (Post::where('id', $id)->exists()) {
+            $Post = Post::find($id);
+            $Post->body = is_null($request->body) ? $Post->body : $request->body;
             // $User->note = is_null($request->note) ? $User->note : $request->note;
-            $User->save();
+            $Post->save();
 
             return response()->json([
                 "message" => "records updated succesfully"
@@ -108,9 +108,9 @@ class ApiController extends Controller
         }
     }
     public function deletePost($id) {
-        if(User::where('id', $id)->exists()) {
-            $User = User::find($id);
-            $User->delete();
+        if(Post::where('id', $id)->exists()) {
+            $Post = Post::find($id);
+            $Post->delete();
 
             return response()->json([
                 "message" => "User deleted"
